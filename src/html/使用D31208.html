@@ -15,7 +15,14 @@
   <!-- 2018-12-9_20:24:39 -->
   <script src="../js/d3.v3.min.js" charset="utf-8"></script>
   <script>
-  d3.select("body").selectAll("p").text("我是谁?我在哪儿?").style("color","red")  
+    d3.select("body").selectAll("p").text("我是谁?我在哪儿?").style("color", "red")
+    var str = "China";
+    var body = d3.select("body");
+    var p = body.selectAll("p");
+    p.datum(str);
+    p.text(function (d, i) {
+      return "第 " + i + "个元素绑定的数据是" + d;
+    })
   </script>
 </body>
 
